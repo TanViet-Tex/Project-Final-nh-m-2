@@ -1,4 +1,4 @@
-// src/routes/index.tsx
+// src/pages/Home.tsx
 
 import React from 'react';
 // Import các component Home đã tạo trong thư mục components/home/
@@ -8,17 +8,17 @@ import ProductSection from '../components/home/ProductSection';
 // Import hook lấy dữ liệu sản phẩm và gán ảnh Unsplash
 import { useProducts } from '../hooks/useProducts'; 
 // Import Spinner nếu bạn muốn hiển thị loading
-import Spinner from '../components/common/Spinner'; 
+// Spinner component removed to avoid unused import during build.
 
 const HomeRoute: React.FC = () => {
   // 1. Gọi Hook để lấy dữ liệu sản phẩm và trạng thái tải
   const { products, loading, error } = useProducts(); 
   
   if (loading) {
-    // Hiển thị Spinner khi đang tải
+    // Hiển thị thông báo đang tải khi dữ liệu chưa sẵn sàng
     return (
       <div className="flex justify-center items-center min-h-screen pt-16">
-        <Spinner /> 
+        <p className="text-xl text-gray-600">Đang tải dữ liệu sản phẩm...</p>
       </div>
     );
   }

@@ -6,13 +6,10 @@ import { UNSPLASH_ACCESS_KEY, UNSPLASH_API_URL } from '../utils/constants';
 // Import các kiểu dữ liệu đã định nghĩa (Sử dụng 'type' là thực hành tốt)
 import type { Product, UnsplashPhoto } from '../types/product'; 
 
-// Giả lập Axios instance (Bạn nên tạo file src/services/api.ts và export một instance Axios thực tế)
-const api = axios.create({
-  baseURL: 'http://localhost:3000/api', // Thay bằng URL API backend của bạn
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+
+// (Optional) You can create an `api` axios instance in `src/services/api.ts`
+// and import it here when you integrate a real backend. For now we use
+// mock data in `getAllProducts` and call Unsplash directly via `axios`.
 
 
 /**
